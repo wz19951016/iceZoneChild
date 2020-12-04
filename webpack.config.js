@@ -2,7 +2,7 @@
  * @Author: wangzhong
  * @Date: 2020-07-07 16:38:43
  * @LastEditors: wangzhong
- * @LastEditTime: 2020-12-04 18:08:10
+ * @LastEditTime: 2020-12-04 18:15:16
  * @FilePath: /iceZoneChild/webpack.config.js
  */
 const path = require("path");
@@ -168,6 +168,8 @@ module.exports = function (webpackEnv) {
       },
       contentBase: path.resolve(__dirname, "build"),
       historyApiFallback: true,
+      host: "0.0.0.0",
+      hot: true,
     },
   };
 };
