@@ -3,8 +3,6 @@ import { {{name}}InitAction } from "./actions"
 import Provider from "./provider";
 import connect from "./connect";
 
-const historySelf = createHistory();
-
 
 const App = (props) => {
   const { dispatch } = props;
