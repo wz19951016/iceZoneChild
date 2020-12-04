@@ -2,7 +2,7 @@
  * @Author: wangzhong
  * @Date: 2020-07-07 16:38:43
  * @LastEditors: wangzhong
- * @LastEditTime: 2020-12-04 16:58:32
+ * @LastEditTime: 2020-12-04 18:08:10
  * @FilePath: /iceZoneChild/webpack.config.js
  */
 const path = require("path");
@@ -27,7 +27,7 @@ const shouldClear = Number(getParam("--clearUnUseless"));
 
 
 module.exports = function (webpackEnv) {
-  const isReact = webpackEnv === "development";
+  const isReact = webpackEnv !== "production";
   return {
     optimization: {
       minimizer: [
@@ -161,7 +161,7 @@ module.exports = function (webpackEnv) {
       }),
       new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     ],
-    // devtool: "eval-source-map",
+    devtool: shouldClear ? false : "eval-source-map",
     devServer: {
       headers: {
         "Access-Control-Allow-Origin": "*",
