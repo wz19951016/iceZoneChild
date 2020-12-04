@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --mode development --env=development --port 8080 --open --serverUrl=http://localhost:8080/",
-    "start": "webpack-dev-server --mode production --env=production --port 900{{index}} --serverUrl=http://localhost:900{{index}}/",
-    "localstart": "webpack-dev-server --mode production --env=local --port 900{{index}} --serverUrl=http://localhost:900{{index}}/",
-    "build": "webpack --mode production --env=production --serverUrl=/{{name}}/"
+    "dev": "webpack-dev-server --mode development --env=development --port 8080 --open --serverUrl=http://localhost:8080/ --clearUnUseless=0",
+    "start": "webpack-dev-server --mode production --env=production --port 900{{index}} --serverUrl=http://localhost:900{{index}}/ --clearUnUseless=0",
+    "localstart": "webpack-dev-server --mode production --env=local --port 900{{index}} --serverUrl=http://localhost:900{{index}}/ --clearUnUseless=0",
+    "build": "webpack --mode production --env=production --serverUrl=/{{name}}/ --clearUnUseless=1"
   },
   "keywords": [],
   "author": "",

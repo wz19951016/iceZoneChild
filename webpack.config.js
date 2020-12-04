@@ -2,7 +2,7 @@
  * @Author: wangzhong
  * @Date: 2020-07-07 16:38:43
  * @LastEditors: wangzhong
- * @LastEditTime: 2020-12-03 16:53:15
+ * @LastEditTime: 2020-12-04 16:58:32
  * @FilePath: /iceZoneChild/webpack.config.js
  */
 const path = require("path");
@@ -23,6 +23,8 @@ const getParam = (str) => {
 };
 
 const serverUrl = getParam("--serverUrl");
+const shouldClear = Number(getParam("--clearUnUseless"));
+
 
 module.exports = function (webpackEnv) {
   const isReact = webpackEnv === "development";
@@ -33,14 +35,16 @@ module.exports = function (webpackEnv) {
           // 加快构建速度
           cache: false, // 开启缓存
           parallel: 4, // 多线程打包
-          terserOptions: {
-            compress: {
-              unused: true, // 剔除无用代码
-              drop_debugger: true, // 剔除debugger
-              drop_console: true, // 剔除console
-              dead_code: true,
-            },
-          },
+          terserOptions: shouldClear
+            ? {
+                compress: {
+                  unused: true, // 剔除无用代码
+                  drop_debugger: true, // 剔除debugger
+                  drop_console: true, // 剔除console
+                  dead_code: true,
+                },
+              }
+            : {},
         }),
       ],
     },
