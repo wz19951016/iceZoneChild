@@ -9,7 +9,7 @@ const Provider = (props) => {
       setState(value);
     });
   }, []);
-  return <Store.Provider value={{ state, store }}>{children}</Store.Provider>;
+  return <Store.Provider value={({ state, store })}>{children}</Store.Provider>;
 };
 console.log(Store);
 export default Provider;
