@@ -9,7 +9,10 @@ const App = (props) => {
 
   useEffect(() => {
     console.log(props);
-    dispatch({{name}}InitAction())
+    dispatch({
+      type: "INITACTION",
+      data: "init {{name}}"
+    })
   }, [0]);
 
   return (
