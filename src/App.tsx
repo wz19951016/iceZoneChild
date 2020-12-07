@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { {{name}}InitAction } from "./actions"
 import Provider from "./provider";
 import connect from "./connect";
 
