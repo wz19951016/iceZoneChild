@@ -5,6 +5,7 @@
  * @LastEditTime: 2020-12-03 17:21:01
  * @FilePath: /iceZoneChild/src/reducers/index.ts
  */
+import { combineReducers } from "redux";
 
 const initialState = {
   data: ""
@@ -19,4 +20,4 @@ const {{name}}Reducer = (state = initialState, action) => {
   }
 };
 
-export default {{name}}Reducer;
+export default combineReducers({ {{name}}Reducer });
