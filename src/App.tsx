@@ -17,6 +17,8 @@ const App = (props) => {
   );
 };
 const BaseApp = connect((state) => {
+  console.log("打印state:")
+  console.log(state)
   return { ...state };
 })(App);
 
