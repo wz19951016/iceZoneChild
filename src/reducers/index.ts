@@ -13,7 +13,7 @@ const initialState = {
 
 const {{name}}Reducer = (state = initialState, action) => {
   switch (action.type) {
-    case "INITACTION":
+    case "{{name}}INITACTION":
       return { ...state, data: action.data };
     default:
       return state;

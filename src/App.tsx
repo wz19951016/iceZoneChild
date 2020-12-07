@@ -9,7 +9,7 @@ const App = (props) => {
   useEffect(() => {
     console.log(props);
     dispatch({
-      type: "INITACTION",
+      type: "{{name}}INITACTION",
       data: "init {{name}}"
     })
   }, [0]);
